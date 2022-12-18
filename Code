@@ -1,0 +1,34 @@
+Problem: http://lequydon.ntucoder.net/Problem/Details/4660        
+// using window sliding technique
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define FAST ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+const ll MAX=1e8+7;
+int n;
+ll m,h[MAX],sum=0,res=0;
+main(){
+FAST;
+cin >> n >> m;
+for(int a=0;a<n;a++){
+    cin >> h[a];
+}
+int i=0,j=0;
+while(i<n&&j<n){
+
+    if(sum<=m){
+        sum+=h[j];
+        j++;
+
+
+    }
+    if(sum>m){
+        sum-=h[i];
+        i++;
+    }
+    res+=j-i;
+}
+
+cout << res;
+}
+
